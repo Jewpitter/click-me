@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -58,6 +58,18 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+
+  void _resetCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
     });
   }
 
@@ -105,10 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.remove),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
